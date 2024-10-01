@@ -19,7 +19,6 @@
   <ItemGroup>
     <Folder Include="Models\ViewModels\" />
     <Folder Include="Models\Validations\" />
-    <Folder Include="Repositories\" />
   </ItemGroup>
 
 </Project>

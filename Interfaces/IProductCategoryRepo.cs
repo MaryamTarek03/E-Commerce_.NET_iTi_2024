@@ -2,7 +2,7 @@
 
 namespace E_Commerce.Interfaces
 {
-    public interface IProductCategory
+    public interface IProductCategoryRepo
     {
         public ProductCategory GetById(int id);
         public ICollection<ProductCategory> GetAll();
