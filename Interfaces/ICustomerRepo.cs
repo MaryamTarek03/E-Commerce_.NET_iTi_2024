@@ -5,6 +5,7 @@ namespace E_Commerce.Interfaces
     public interface ICustomerRepo
     {
         public Customer GetById(int id);
+        public Customer GetByUsername(string username);
         public ICollection<Customer> GetAll();
         public void Insert(Customer customer);
         public void Update(Customer customer);
