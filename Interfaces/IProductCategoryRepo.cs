@@ -4,7 +4,7 @@ namespace E_Commerce.Interfaces
 {
     public interface IProductCategoryRepo
     {
-        public ProductCategory GetById(int id);
+        public ProductCategory? GetById(int productId, int categoryId);
         public ICollection<ProductCategory> GetAll();
         public void Insert(ProductCategory productCategory);
         public void Update(ProductCategory productCategory);

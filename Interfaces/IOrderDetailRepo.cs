@@ -4,7 +4,7 @@ namespace E_Commerce.Interfaces
 {
     public interface IOrderDetailRepo
     {
-        public OrderDetail? GetById(int id);
+        public OrderDetail? GetById(int orderId, int productId);
         public ICollection<OrderDetail> GetAll();
         public void Insert(OrderDetail orderDetail);
         public void Update(OrderDetail orderDetail);

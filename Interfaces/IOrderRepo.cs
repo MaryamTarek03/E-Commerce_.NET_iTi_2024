@@ -9,5 +9,6 @@ namespace E_Commerce.Interfaces
         public void Insert(Order order);
         public void Update(Order order);
         public void Delete(Order order);
+        public bool OrderExist(int id);
     }
 }

@@ -6,29 +6,16 @@ namespace E_Commerce.Repositories
 {
     public class CategoryRepo : ICategoryRepo
     {
-        ShopContext _context;
+        readonly ShopContext _context;
         public CategoryRepo() => _context = new ShopContext();
 
-        public ICollection<Category> GetAll()
-        {
-            throw new NotImplementedException();
-        }
-        public Category? GetById(int id)
-        {
-            throw new NotImplementedException();
-        }
+        public ICollection<Category> GetAll() => _context.Categories.ToList();
+        public Category? GetById(int id) => _context.Categories.SingleOrDefault(c => c.Id == id);
 
-        public void Insert(Category category)
-        {
-            throw new NotImplementedException();
-        }
-        public void Update(Category category)
-        {
-            throw new NotImplementedException();
-        }
-        public void Delete(Category category)
-        {
-            throw new NotImplementedException();
-        }
+        public void Insert(Category category) => _context.Categories.Add(category);
+        public void Update(Category category) => _context.Categories.Update(category);
+        public void Delete(Category category) => _context.Categories.Remove(category);
+
+        public bool CategoryExist(string name) => _context.Categories.Any(c => c.Name == name);
     }
 }

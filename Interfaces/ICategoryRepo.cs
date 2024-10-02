@@ -9,5 +9,6 @@ namespace E_Commerce.Interfaces
         public void Insert(Category category);
         public void Update(Category category);
         public void Delete(Category category);
+        public bool CategoryExist(string categoryName);
     }
 }
