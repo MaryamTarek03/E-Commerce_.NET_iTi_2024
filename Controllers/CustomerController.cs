@@ -20,10 +20,10 @@ namespace E_Commerce.Controllers
             ICollection<Customer> customers = _customerRepo.GetAll();
             return View(customers);
         }
-        public IActionResult GetById(int id)
+        public IActionResult Details(int id)
         {
             Customer? customer = _customerRepo.GetById(id);
-            return View(customer);
+            return View("GetById", customer);
         }
 
         // form views
@@ -52,7 +52,7 @@ namespace E_Commerce.Controllers
         {
             Customer? customer = _customerRepo.GetById(id);
             _customerRepo.Delete(customer);
-            return View("GetAll");
+            return RedirectToAction("GetAll");
         }
     }
 }

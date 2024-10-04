@@ -1,4 +1,6 @@
+using E_Commerce.Interfaces;
 using E_Commerce.Models;
+using E_Commerce.Repositories;
 using Microsoft.EntityFrameworkCore;
 
 namespace E_Commerce
@@ -18,6 +20,8 @@ namespace E_Commerce
             //        // change to your connection string & UseSqlServer
             //        .UseNpgsql(builder.Configuration.GetConnectionString("Default"));
             //});
+            builder.Services.AddScoped<ICustomerRepo, CustomerRepo>();
+            builder.Services.AddScoped<IProductRepo, ProductRepo>();
 
             var app = builder.Build();
 

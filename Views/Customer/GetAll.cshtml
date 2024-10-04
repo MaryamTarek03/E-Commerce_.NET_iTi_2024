@@ -1,0 +1,47 @@
+﻿@using E_Commerce.Models.DbModels
+@{
+    ViewBag.Title = "Customers";
+}
+
+@model ICollection<Customer>
+@* <center>
+    <h2>Customers</h2>
+</center> *@
+
+    <a asp-action="AddForm" asp-controller="Customer" >
+    <button class="my-button" role="button" style="margin-left: auto;"> <span class="text">Create new</span></button>
+    </a>
+
+
+<div class="center-body">
+
+<table class="rwd-table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Customer customer in Model)
+        {
+            <tr>
+                <td><a asp-action="Details" asp-controller="Customer" asp-route-id =@customer.Id>@customer.FullName</a></td>
+                <td>@customer.Email</td>
+                <td>@customer.Phone</td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = customer.Id }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = customer.Id })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+</div>
+
+@* 
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p> *@

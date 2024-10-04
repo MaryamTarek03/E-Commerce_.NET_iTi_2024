@@ -1,0 +1,79 @@
+﻿@using E_Commerce.Models.DbModels
+@{
+    ViewBag.Title = "Customer Details";
+}
+@model Customer
+
+
+<head>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<div class="center-body">
+<div class="glowy-card">
+    <center><h2>@Model.FullName</h2></center>
+<hr />
+    <dl class="dl-horizontal">
+        
+            @* <b>ID: </b>@Model.Id
+            <br>
+            <b>Full Name: </b>@Model.FullName
+            <br>
+            
+            <b>Country: </b>@Model.Country
+            <br>
+            <b>Default shipping address: </b>@Model.DefaultShippingAddress
+            <br>
+            <b>Billing address: </b>@Model.BillingAddress
+            <br> *@
+        @* <dt>
+            Full Name
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.FullName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Phone)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Phone)
+        </dd> *@
+        <p>
+         @Model.Email
+        <br>
+        @Model.Phone
+        </p>        
+        <dt>
+            Country
+        </dt>
+        <dd>
+            @Model.Country
+        </dd>
+        <dt>
+            Default Shipping Address
+        </dt>
+        <dd>
+            @Model.DefaultShippingAddress
+        </dd>
+        <dt>
+            Billing Address
+        </dt>
+        <dd>
+            @Model.BillingAddress
+        </dd>
+        
+    </dl>
+</div>
+</div>
+
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "GetAll")
+</p>

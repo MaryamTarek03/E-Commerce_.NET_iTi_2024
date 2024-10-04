@@ -1,4 +1,6 @@
-﻿namespace E_Commerce.Models.DbModels
+﻿using System.ComponentModel.DataAnnotations.Schema;
+
+namespace E_Commerce.Models.DbModels
 {
     public class Product
     {
@@ -14,7 +16,10 @@
         public DateTime CreationDate { get; set; } = DateTime.Now;
         public int Stock { get; set; }
 
-        public virtual ICollection<ProductCategory>? ProductCategories { get; set; }
+        // foreign key
+        public int? CategoryId { get; set; }
+        public virtual Category? Category { get; set; }
+
         public virtual ICollection<OrderDetail>? OrderDetails { get; set; }
     }
 

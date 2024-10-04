@@ -21,11 +21,23 @@ namespace E_Commerce.Repositories
 
         // normal database functions
         // Add يضيف عميل للداتا بيز
-        public void Insert(Customer customer) => _context.Customers.Add(customer);
+        public void Insert(Customer customer)
+        {
+            _context.Customers.Add(customer);
+            _context.SaveChanges();
+        }
         // Update يجدد بيانات عميل
-        public void Update(Customer customer) => _context.Customers.Update(customer);
+        public void Update(Customer customer)
+        {
+            _context.Customers.Update(customer);
+            _context.SaveChanges();
+        }
         // Delete يمسح عميل
-        public void Delete(Customer customer) => _context.Customers.Remove(customer);
+        public void Delete(Customer customer)
+        {
+            _context.Customers.Remove(customer);
+            _context.SaveChanges();
+        }
 
         //بشوف لو الايميل ده مستخدم قبل كده ولا لا (موجود ولا لا يعني) هنستعملها بعدين
         public bool EmailExist(string email) => _context.Customers.Any(c => c.Email == email);

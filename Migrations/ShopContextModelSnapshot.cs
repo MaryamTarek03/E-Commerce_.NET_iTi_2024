@@ -172,6 +172,9 @@ namespace E_Commerce.Migrations
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
+                    b.Property<int?>("CategoryId")
+                        .HasColumnType("integer");
+
                     b.Property<DateTime>("CreationDate")
                         .HasColumnType("timestamp with time zone");
 
@@ -206,30 +209,9 @@ namespace E_Commerce.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Products");
-                });
-
-            modelBuilder.Entity("E_Commerce.Models.DbModels.ProductCategory", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("integer");
-
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
-
-                    b.Property<int?>("CategoryId")
-                        .HasColumnType("integer");
-
-                    b.Property<int?>("ProductId")
-                        .HasColumnType("integer");
-
-                    b.HasKey("Id");
-
                     b.HasIndex("CategoryId");
 
-                    b.HasIndex("ProductId");
-
-                    b.ToTable("ProductCategories");
+                    b.ToTable("Products");
                 });
 
             modelBuilder.Entity("E_Commerce.Models.DbModels.Order", b =>
@@ -256,24 +238,18 @@ namespace E_Commerce.Migrations
                     b.Navigation("Product");
                 });
 
-            modelBuilder.Entity("E_Commerce.Models.DbModels.ProductCategory", b =>
+            modelBuilder.Entity("E_Commerce.Models.DbModels.Product", b =>
                 {
                     b.HasOne("E_Commerce.Models.DbModels.Category", "Category")
-                        .WithMany("ProductCategories")
+                        .WithMany("Categories")
                         .HasForeignKey("CategoryId");
 
-                    b.HasOne("E_Commerce.Models.DbModels.Product", "Product")
-                        .WithMany("ProductCategories")
-                        .HasForeignKey("ProductId");
-
                     b.Navigation("Category");
-
-                    b.Navigation("Product");
                 });
 
             modelBuilder.Entity("E_Commerce.Models.DbModels.Category", b =>
                 {
-                    b.Navigation("ProductCategories");
+                    b.Navigation("Categories");
                 });
 
             modelBuilder.Entity("E_Commerce.Models.DbModels.Customer", b =>
@@ -289,8 +265,6 @@ namespace E_Commerce.Migrations
             modelBuilder.Entity("E_Commerce.Models.DbModels.Product", b =>
                 {
                     b.Navigation("OrderDetails");
-
-                    b.Navigation("ProductCategories");
                 });
 #pragma warning restore 612, 618
         }

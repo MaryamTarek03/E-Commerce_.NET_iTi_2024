@@ -13,8 +13,20 @@ namespace E_Commerce.Repositories
         public OrderDetail? GetById(int orderId, int productId)
             => _context.OrderDetails.SingleOrDefault(od => od.OrderId == orderId && od.ProductId == productId);
 
-        public void Insert(OrderDetail orderDetail) => _context.OrderDetails.Add(orderDetail);
-        public void Update(OrderDetail orderDetail) => _context.OrderDetails.Update(orderDetail);
-        public void Delete(OrderDetail orderDetail) => _context.OrderDetails.Remove(orderDetail);
+        public void Insert(OrderDetail orderDetail)
+        {
+            _context.OrderDetails.Add(orderDetail);
+            _context.SaveChanges();
+        }
+        public void Update(OrderDetail orderDetail)
+        {
+            _context.OrderDetails.Update(orderDetail);
+            _context.SaveChanges();
+        }
+        public void Delete(OrderDetail orderDetail)
+        {
+            _context.OrderDetails.Remove(orderDetail);
+            _context.SaveChanges();
+        }
     }
 }
