@@ -9,21 +9,21 @@ VALUES
 ('Sports', 'Sports equipment and apparel', 'https://cdn-icons-png.freepik.com/512/5351/5351365.png'),
 ('Beauty', 'Beauty and personal care products', 'https://cdn-icons-png.flaticon.com/512/3501/3501241.png');
 
-INSERT INTO public."Products" ("Sku", "Name", "Price", "Weight", "Description", "Thumbnail", "Image", "CreationDate", "Stock", "CategoryId")
+INSERT INTO public."Products" ("Sku", "Name", "Price", "Weight", "Description", "Thumbnail", "Image", "CreationDate", "Stock")
 VALUES
-('ELEC-SMRT-001', 'Smartphone', 699.99, 0.5, 'Latest model smartphone with advanced features', 'https://cdn.thewirecutter.com/wp-content/media/2024/05/smartphone-2048px-1013.jpg', 'https://cdn.thewirecutter.com/wp-content/media/2024/05/smartphone-2048px-1013.jpg', '2024-10-03', 50, 1),
-('ELEC-LPTP-002', 'Laptop', 1299.99, 2.5, 'High-performance laptop for professionals', 'https://cdn.mos.cms.futurecdn.net/Ajc3ezCTN4FGz2vF4LpQn9-1200-80.jpg', 'https://cdn.mos.cms.futurecdn.net/Ajc3ezCTN4FGz2vF4LpQn9-1200-80.jpg', '2024-10-03', 30, 1),
-('ELEC-HDPH-003', 'Headphones', 199.99, 0.3, 'Noise-cancelling over-ear headphones', 'https://www.energysistem.com/cdnassets/products/45305/principal_2000.jpg', 'https://www.energysistem.com/cdnassets/products/45305/principal_2000.jpg', '2024-10-03', 100, 1),
-('FURN-BKSH-001', 'Bookshelf', 89.99, 15.0, 'Wooden bookshelf with multiple compartments', 'https://www.ubuy.com.eg/productimg/?image=aHR0cHM6Ly9tLm1lZGlhLWFtYXpvbi5jb20vaW1hZ2VzL0kvNzFTZVhQYll0VUwuX0FDX1NMMTUwMF8uanBn.jpg', 'https://www.ubuy.com.eg/productimg/?image=aHR0cHM6Ly9tLm1lZGlhLWFtYXpvbi5jb20vaW1hZ2VzL0kvNzFTZVhQYll0VUwuX0FDX1NMMTUwMF8uanBn.jpg','2024-10-03', 20, 2),
-('CLOT-RNSH-001', 'Running Shoes', 59.99, 0.8, 'Comfortable running shoes for all terrains', 'https://cdn.thewirecutter.com/wp-content/media/2023/09/running-shoes-2048px-5960.jpg', 'https://cdn.thewirecutter.com/wp-content/media/2023/09/running-shoes-2048px-5960.jpg', '2024-10-03', 75, 3),
-('ELEC-TBLT-004', 'Tablet', 499.99, 0.8, 'High-resolution tablet with long battery life', 'https://cdn.thewirecutter.com/wp-content/media/2024/06/besttablets-2048px-9875.jpg', 'https://cdn.thewirecutter.com/wp-content/media/2024/06/besttablets-2048px-9875.jpg', '2024-10-03', 40, 1),
-('ELEC-CMRA-005', 'Digital Camera', 899.99, 1.2, 'Professional digital camera with 4K video recording', 'https://i.pcmag.com/imagery/roundups/018cwxjHcVMwiaDIpTnZJ8H-22..v1570842461.jpg', 'https://i.pcmag.com/imagery/roundups/018cwxjHcVMwiaDIpTnZJ8H-22..v1570842461.jpg', '2024-10-03', 25, 1),
-('FURN-CHRS-002', 'Office Chair', 149.99, 10.0, 'Ergonomic office chair with lumbar support', 'https://cellbell.in/cdn/shop/files/038_4.png?v=1715064457', 'https://cellbell.in/cdn/shop/files/038_4.png?v=1715064457', '2024-10-03', 15, 2),
-('CLOT-JCKT-002', 'Winter Jacket', 129.99, 1.5, 'Warm and waterproof winter jacket', 'https://n.nordstrommedia.com/it/8fedc044-51e3-40e5-ab2c-0c91bdd1207d.jpeg?h=600&w=750', 'https://n.nordstrommedia.com/it/8fedc044-51e3-40e5-ab2c-0c91bdd1207d.jpeg?h=600&w=750', '2024-10-03', 60, 3),
-('TOYS-LEGO-001', 'LEGO Set', 59.99, 2.0, 'Creative LEGO building set for kids', 'https://www.lego.com/cdn/cs/set/assets/blt776c5237d6f20cf2/APEX_article_Card_Content.jpg?format=jpg&quality=80&width=700&dpr=1?fit=crop&quality=80&width=700&dpr=1', 'https://www.lego.com/cdn/cs/set/assets/blt776c5237d6f20cf2/APEX_article_Card_Content.jpg?format=jpg&quality=80&width=700&dpr=1?fit=crop&quality=80&width=700&dpr=1', '2024-10-03', 80, 4),
-('SPRT-BALL-001', 'Soccer Ball', 29.99, 0.4, 'Professional-grade soccer ball', 'https://nwscdn.com/media/catalog/product/cache/all/thumbnail/800x/0dc2d03fe217f8c83829496872af24a0/t/r/training-football-in-orange.jpg', 'https://nwscdn.com/media/catalog/product/cache/all/thumbnail/800x/0dc2d03fe217f8c83829496872af24a0/t/r/training-football-in-orange.jpg', '2024-10-03', 100, 5),
-('BEAU-SHMP-001', 'Shampoo', 9.99, 0.5, 'Organic shampoo for all hair types', 'https://www.babyforest.in/cdn/shop/products/IMG_1631final.jpg?v=1661261938', 'https://www.babyforest.in/cdn/shop/products/IMG_1631final.jpg?v=1661261938', '2024-10-03', 200, 6),
-('GRCR-PAST-001', 'Pasta', 2.99, 1.0, 'Italian pasta made from durum wheat', 'https://skinnyspatula.com/wp-content/uploads/2022/01/Pink_Pasta_Sauce1.jpg', 'https://skinnyspatula.com/wp-content/uploads/2022/01/Pink_Pasta_Sauce1.jpg', '2024-10-03', 150, 7);
+('ELEC-SMRT-001', 'Smartphone', 699.99, 0.5, 'Latest model smartphone with advanced features', 'https://cdn.thewirecutter.com/wp-content/media/2024/05/smartphone-2048px-1013.jpg', 'https://cdn.thewirecutter.com/wp-content/media/2024/05/smartphone-2048px-1013.jpg', '2024-10-03', 50),
+('ELEC-LPTP-002', 'Laptop', 1299.99, 2.5, 'High-performance laptop for professionals', 'https://cdn.mos.cms.futurecdn.net/Ajc3ezCTN4FGz2vF4LpQn9-1200-80.jpg', 'https://cdn.mos.cms.futurecdn.net/Ajc3ezCTN4FGz2vF4LpQn9-1200-80.jpg', '2024-10-03', 30),
+('ELEC-HDPH-003', 'Headphones', 199.99, 0.3, 'Noise-cancelling over-ear headphones', 'https://www.energysistem.com/cdnassets/products/45305/principal_2000.jpg', 'https://www.energysistem.com/cdnassets/products/45305/principal_2000.jpg', '2024-10-03', 100),
+('FURN-BKSH-001', 'Bookshelf', 89.99, 15.0, 'Wooden bookshelf with multiple compartments', 'https://www.ubuy.com.eg/productimg/?image=aHR0cHM6Ly9tLm1lZGlhLWFtYXpvbi5jb20vaW1hZ2VzL0kvNzFTZVhQYll0VUwuX0FDX1NMMTUwMF8uanBn.jpg', 'https://www.ubuy.com.eg/productimg/?image=aHR0cHM6Ly9tLm1lZGlhLWFtYXpvbi5jb20vaW1hZ2VzL0kvNzFTZVhQYll0VUwuX0FDX1NMMTUwMF8uanBn.jpg','2024-10-03', 20),
+('CLOT-RNSH-001', 'Running Shoes', 59.99, 0.8, 'Comfortable running shoes for all terrains', 'https://cdn.thewirecutter.com/wp-content/media/2023/09/running-shoes-2048px-5960.jpg', 'https://cdn.thewirecutter.com/wp-content/media/2023/09/running-shoes-2048px-5960.jpg', '2024-10-03', 75),
+('ELEC-TBLT-004', 'Tablet', 499.99, 0.8, 'High-resolution tablet with long battery life', 'https://cdn.thewirecutter.com/wp-content/media/2024/06/besttablets-2048px-9875.jpg', 'https://cdn.thewirecutter.com/wp-content/media/2024/06/besttablets-2048px-9875.jpg', '2024-10-03', 40),
+('ELEC-CMRA-005', 'Digital Camera', 899.99, 1.2, 'Professional digital camera with 4K video recording', 'https://i.pcmag.com/imagery/roundups/018cwxjHcVMwiaDIpTnZJ8H-22..v1570842461.jpg', 'https://i.pcmag.com/imagery/roundups/018cwxjHcVMwiaDIpTnZJ8H-22..v1570842461.jpg', '2024-10-03', 25),
+('FURN-CHRS-002', 'Office Chair', 149.99, 10.0, 'Ergonomic office chair with lumbar support', 'https://cellbell.in/cdn/shop/files/038_4.png?v=1715064457', 'https://cellbell.in/cdn/shop/files/038_4.png?v=1715064457', '2024-10-03', 15),
+('CLOT-JCKT-002', 'Winter Jacket', 129.99, 1.5, 'Warm and waterproof winter jacket', 'https://n.nordstrommedia.com/it/8fedc044-51e3-40e5-ab2c-0c91bdd1207d.jpeg?h=600&w=750', 'https://n.nordstrommedia.com/it/8fedc044-51e3-40e5-ab2c-0c91bdd1207d.jpeg?h=600&w=750', '2024-10-03', 60),
+('TOYS-LEGO-001', 'LEGO Set', 59.99, 2.0, 'Creative LEGO building set for kids', 'https://www.lego.com/cdn/cs/set/assets/blt776c5237d6f20cf2/APEX_article_Card_Content.jpg?format=jpg&quality=80&width=700&dpr=1?fit=crop&quality=80&width=700&dpr=1', 'https://www.lego.com/cdn/cs/set/assets/blt776c5237d6f20cf2/APEX_article_Card_Content.jpg?format=jpg&quality=80&width=700&dpr=1?fit=crop&quality=80&width=700&dpr=1', '2024-10-03', 80),
+('SPRT-BALL-001', 'Soccer Ball', 29.99, 0.4, 'Professional-grade soccer ball', 'https://nwscdn.com/media/catalog/product/cache/all/thumbnail/800x/0dc2d03fe217f8c83829496872af24a0/t/r/training-football-in-orange.jpg', 'https://nwscdn.com/media/catalog/product/cache/all/thumbnail/800x/0dc2d03fe217f8c83829496872af24a0/t/r/training-football-in-orange.jpg', '2024-10-03', 100),
+('BEAU-SHMP-001', 'Shampoo', 9.99, 0.5, 'Organic shampoo for all hair types', 'https://www.babyforest.in/cdn/shop/products/IMG_1631final.jpg?v=1661261938', 'https://www.babyforest.in/cdn/shop/products/IMG_1631final.jpg?v=1661261938', '2024-10-03', 200),
+('GRCR-PAST-001', 'Pasta', 2.99, 1.0, 'Italian pasta made from durum wheat', 'https://skinnyspatula.com/wp-content/uploads/2022/01/Pink_Pasta_Sauce1.jpg', 'https://skinnyspatula.com/wp-content/uploads/2022/01/Pink_Pasta_Sauce1.jpg', '2024-10-03', 150);
 
 INSERT INTO public."Customers" ("Email", "Password", "FullName", "BillingAddress", "DefaultShippingAddress", "Country", "Phone")
 VALUES
@@ -53,3 +53,20 @@ VALUES
 (3, 8, 149.99, 'FURN-CHRS-002', 1),
 (4, 9, 129.99, 'CLOT-JCKT-002', 2),
 (5, 10, 59.99, 'TOYS-LEGO-001', 1);
+
+
+INSERT INTO public."ProductCategories" ("ProductId", "CategoryId")
+VALUES
+(1, 1),
+(2, 1),
+(3, 1),
+(4, 2),
+(5, 3),
+(6, 1),
+(7, 1),
+(8, 2),
+(9, 3),
+(10, 4),
+(11, 5),
+(12, 6),
+(13, 7);
