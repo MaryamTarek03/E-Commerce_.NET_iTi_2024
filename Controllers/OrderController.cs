@@ -35,10 +35,12 @@ namespace E_Commerce_.NET_iTi_2024.Controllers
         #region form views
         public IActionResult AddForm()
         {
+            ViewBag.Customers = _customerRepo.GetAll();
             return View();
         }
         public IActionResult EditForm(int id)
         {
+            ViewBag.Customers = _customerRepo.GetAll();
             Order? Order = _orderRepo.GetById(id);
             return View(Order);
         }
@@ -47,11 +49,13 @@ namespace E_Commerce_.NET_iTi_2024.Controllers
         #region  functions
         public IActionResult Add(Order order)
         {
+            order.OrderDate = order.OrderDate.ToUniversalTime();
             _orderRepo.Insert(order);
             return RedirectToAction("GetAll");
         }
         public IActionResult Edit(Order order)
         {
+            order.OrderDate = order.OrderDate.ToUniversalTime();
             _orderRepo.Update(order);
             return RedirectToAction("GetAll");
         }

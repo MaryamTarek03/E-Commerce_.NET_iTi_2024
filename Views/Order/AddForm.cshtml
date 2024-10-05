@@ -1,0 +1,70 @@
+﻿@using E_Commerce.Models.DbModels
+
+@{
+    ViewBag.Title = "Add Order";
+}
+<head>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<h2>Add Order</h2>
+@model Order
+<div class="center-body">
+    <form asp-action="Add" method="post" class="my-card" style="min-width:500px">
+        <div class="form-group">
+            <label asp-for="Amount">Amount</label>
+            <input asp-for="Amount" class="form-control" />
+            <span asp-validation-for="Amount" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="ShippingAddress"></label>
+            <input type="text" asp-for="ShippingAddress" class="form-control" />
+            <span asp-validation-for="ShippingAddress" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+
+            <label asp-for="OrderAddress"></label>
+            <input asp-for="OrderAddress" class="form-control" />
+            <span asp-validation-for="OrderAddress" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="OrderEmail"></label>
+            <input type="email" asp-for="OrderEmail" class="form-control" />
+            <span asp-validation-for="OrderEmail" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="OrderDate">Order Date</label>
+            <input asp-for="OrderDate" class="form-control" />
+            <span asp-validation-for="OrderDate" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="OrderStatus">Order Status</label>
+            <input asp-for="OrderStatus" class="form-control" />
+            <span asp-validation-for="OrderStatus" class="text-danger"></span>
+        </div>
+        <div class="form-group col-md-6">
+            <label for="inputState">Customer Name</label>
+            <select asp-for="CustomerId" class="form-control">
+                @foreach (Customer item in ViewBag.Customers)
+                {
+                    <option value="@item.Id">@item.FullName</option>
+                }
+            </select>
+        </div>
+        <br />
+        <center>
+            <button type="submit" class="my-button">Add</button>
+        </center>
+    </form>
+</div>
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
