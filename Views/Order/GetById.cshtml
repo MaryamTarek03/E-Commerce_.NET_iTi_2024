@@ -1,0 +1,83 @@
+﻿﻿@using E_Commerce.Models.DbModels;
+@{
+    ViewBag.Title = "Order Details";
+}
+@model Order
+<head>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<div class="center-body">
+    <div class="glowy-card">
+        <center><h2>@Model.Customer?.FullName</h2></center>
+        <hr />
+        <dl class="dl-horizontal">
+
+            <dt>
+                Customer email
+            </dt>
+            <dd>
+                @Model.OrderEmail
+            </dd>
+            <dt>
+                Address
+            </dt>
+            <dd>
+                @Model.OrderAddress
+            </dd>
+            <dt>
+                Date
+            </dt>
+            <dd>
+                @Model.OrderDate
+            </dd>
+            <dt>
+                Status
+            </dt>
+            <dd>
+                @Model.OrderStatus
+            </dd>
+        </dl>
+    </div>
+</div>
+<center>
+    <a asp-action="EditForm" asp-controller="Order" asp-route-id=@Model.Id>
+        <button class="my-button" role="button" style="display: inline; background: #028875"> <span class="text">Edit</span></button>
+    </a>
+    <a asp-action="Delete" asp-controller="Order" asp-route-id=@Model.Id>
+        <button class="my-button" role="button" style="display: inline; background: #E53935"> <span class="text">Delete</span></button>
+    </a>
+</center>
+
+<p>
+    @* @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) | *@
+    @Html.ActionLink("Back to List", "GetAll")
+</p>
+<br />
+<center><h2>Order items</h2></center>
+<div class="my-grid-container">
+    @foreach (OrderDetail orderDetail in Model.OrderDetails)
+    {
+        <div class="my-card">
+            <dt>
+                Product
+            </dt>
+            <dd>
+                @orderDetail.Product.Name
+            </dd>
+            <dt>
+                SKU
+            </dt>
+            <dd>
+                @orderDetail.Sku
+            </dd>
+            <dt>
+                    Price &nbsp;&nbsp;| Quantity
+            </dt>
+            <dd>
+                @orderDetail.Price | @orderDetail.Quantity
+            </dd>
+        </div>
+    }
+</div>

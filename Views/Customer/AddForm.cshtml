@@ -1,0 +1,66 @@
+﻿@using E_Commerce.Models.DbModels
+@{
+    ViewBag.Title = "Add Customer";
+}
+<head>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<h2>Add Customer</h2>
+@model Customer
+<div class="center-body">
+<form asp-action="Add" method="post" class="my-card" style="min-width:500px">
+    <div class="form-group">
+        <label asp-for="FullName">Full name</label>
+        <input asp-for="FullName" class="form-control" />
+        <span asp-validation-for="FullName" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Email"></label>
+        <input type="email" asp-for="Email" class="form-control" />
+        <span asp-validation-for="Email" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Password"></label>
+        <input asp-for="Password" class="form-control" />
+        <span asp-validation-for="Password" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Country"></label>
+        <input asp-for="Country" class="form-control" />
+        <span asp-validation-for="Country" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="BillingAddress">Billing address</label>
+        <input asp-for="BillingAddress" class="form-control" />
+        <span asp-validation-for="BillingAddress" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="DefaultShippingAddress">Default shipping address</label>
+        <input asp-for="Password" class="form-control" />
+        <span asp-validation-for="Password" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Phone"></label>
+        <input asp-for="Phone" class="form-control" />
+        <span asp-validation-for="Phone" class="text-danger"></span>
+    </div>
+    <br />
+    <center>
+        <button type="submit" class="my-button">Add</button>
+    </center>
+</form>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

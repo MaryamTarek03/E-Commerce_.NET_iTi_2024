@@ -26,6 +26,24 @@
                 </a>
             </li>
             <li>
+                <a asp-action="GetAll" asp-controller="Customer">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="21px" viewBox="0 0 512 512"><!--!Font Awesome Free 6.6.0 by - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M304 128a80 80 0 1 0 -160 0 80 80 0 1 0 160 0zM96 128a128 128 0 1 1 256 0A128 128 0 1 1 96 128zM49.3 464l349.5 0c-8.9-63.3-63.3-112-129-112l-91.4 0c-65.7 0-120.1 48.7-129 112zM0 482.3C0 383.8 79.8 304 178.3 304l91.4 0C368.2 304 448 383.8 448 482.3c0 16.4-13.3 29.7-29.7 29.7L29.7 512C13.3 512 0 498.7 0 482.3z" /></svg>
+                    <span>&nbsp;Customers</span>
+                </a>
+            </li>
+            <li>
+                <a asp-action="GetAll" asp-controller="Product">
+                    <svg xmlns="http://www.w3.org/2000/svg"height="21px" viewBox="0 0 512 512"><!--!Font Awesome Free 6.6.0 by - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M345 39.1L472.8 168.4c52.4 53 52.4 138.2 0 191.2L360.8 472.9c-9.3 9.4-24.5 9.5-33.9 .2s-9.5-24.5-.2-33.9L438.6 325.9c33.9-34.3 33.9-89.4 0-123.7L310.9 72.9c-9.3-9.4-9.2-24.6 .2-33.9s24.6-9.2 33.9 .2zM0 229.5L0 80C0 53.5 21.5 32 48 32l149.5 0c17 0 33.3 6.7 45.3 18.7l168 168c25 25 25 65.5 0 90.5L277.3 442.7c-25 25-65.5 25-90.5 0l-168-168C6.7 262.7 0 246.5 0 229.5zM144 144a32 32 0 1 0 -64 0 32 32 0 1 0 64 0z" /></svg>
+                    <span>&nbsp;Products</span>
+                </a>
+            </li>
+            <li>
+                <a asp-action="GetAll" asp-controller="Order">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="21px" viewBox="0 0 512 512"><!--!Font Awesome Free 6.6.0 by - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M0 24C0 10.7 10.7 0 24 0L69.5 0c22 0 41.5 12.8 50.6 32l411 0c26.3 0 45.5 25 38.6 50.4l-41 152.3c-8.5 31.4-37 53.3-69.5 53.3l-288.5 0 5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5L488 336c13.3 0 24 10.7 24 24s-10.7 24-24 24l-288.3 0c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5L24 48C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96z" /></svg>
+                    <span>&nbsp;Orders</span>
+                </a>
+            </li>
+            <li>
                 <a href="dashboard.html">
                     <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M520-640v-160q0-17 11.5-28.5T560-840h240q17 0 28.5 11.5T840-800v160q0 17-11.5 28.5T800-600H560q-17 0-28.5-11.5T520-640ZM120-480v-320q0-17 11.5-28.5T160-840h240q17 0 28.5 11.5T440-800v320q0 17-11.5 28.5T400-440H160q-17 0-28.5-11.5T120-480Zm400 320v-320q0-17 11.5-28.5T560-520h240q17 0 28.5 11.5T840-480v320q0 17-11.5 28.5T800-120H560q-17 0-28.5-11.5T520-160Zm-400 0v-160q0-17 11.5-28.5T160-360h240q17 0 28.5 11.5T440-320v160q0 17-11.5 28.5T400-120H160q-17 0-28.5-11.5T120-160Zm80-360h160v-240H200v240Zm400 320h160v-240H600v240Zm0-480h160v-80H600v80ZM200-200h160v-80H200v80Zm160-320Zm240-160Zm0 240ZM360-280Z" /></svg>
                     <span>Dashboard</span>
@@ -39,14 +57,14 @@
                 </button>
                 <ul class="sub-menu">
                     <div>
-                    <li><a href="#">Customer</a></li>
-                    <li><a href="#">Product</a></li>
-                    <li><a href="#">Category</a></li>
-                    <li><a href="#">Order</a></li>
+                    <li><a asp-action="AddForm" asp-controller="Customer">Customer</a></li>
+                    <li><a asp-action="AddForm" asp-controller="Product">Product</a></li>
+                    <li><a asp-action="AddForm" asp-controller="Category">Category</a></li>
+                    <li><a asp-action="AddForm" asp-controller="Order">Order</a></li>
                     </div>
                 </ul>
             </li>
-            <li>
+            @* <li>
                 <button onclick=toggleSubMenu(this) class="dropdown-btn">
                     <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="m221-313 142-142q12-12 28-11.5t28 12.5q11 12 11 28t-11 28L250-228q-12 12-28 12t-28-12l-86-86q-11-11-11-28t11-28q11-11 28-11t28 11l57 57Zm0-320 142-142q12-12 28-11.5t28 12.5q11 12 11 28t-11 28L250-548q-12 12-28 12t-28-12l-86-86q-11-11-11-28t11-28q11-11 28-11t28 11l57 57Zm339 353q-17 0-28.5-11.5T520-320q0-17 11.5-28.5T560-360h280q17 0 28.5 11.5T880-320q0 17-11.5 28.5T840-280H560Zm0-320q-17 0-28.5-11.5T520-640q0-17 11.5-28.5T560-680h280q17 0 28.5 11.5T880-640q0 17-11.5 28.5T840-600H560Z" /></svg>
                     <span>Edit</span>
@@ -54,18 +72,13 @@
                 </button>
                 <ul class="sub-menu">
                     <div>
-                    <li><a href="#">Customer</a></li>
-                    <li><a href="#">Product</a></li>
-                    <li><a href="#">Category</a></li>
+                        <li><a href="Customer/AddForm">Customer</a></li>
+                        <li><a asp-action="AddForm" asp-controller="Product">Product</a></li>
+                        <li><a asp-action="AddForm" asp-controller="Category">Category</a></li>
+                        <li><a asp-action="AddForm" asp-controller="Order">Order</a></li>
                     </div>
                 </ul>
-            </li>
-            <li>
-                <a asp-action="GetAll" asp-controller="Customer">
-                    <svg xmlns="http://www.w3.org/2000/svg" height="21px" viewBox="0 0 512 512"><!--!Font Awesome Free 6.6.0 by - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M304 128a80 80 0 1 0 -160 0 80 80 0 1 0 160 0zM96 128a128 128 0 1 1 256 0A128 128 0 1 1 96 128zM49.3 464l349.5 0c-8.9-63.3-63.3-112-129-112l-91.4 0c-65.7 0-120.1 48.7-129 112zM0 482.3C0 383.8 79.8 304 178.3 304l91.4 0C368.2 304 448 383.8 448 482.3c0 16.4-13.3 29.7-29.7 29.7L29.7 512C13.3 512 0 498.7 0 482.3z" /></svg>
-                    <span>&nbsp;Customers</span>
-                </a>
-            </li>
+            </li> *@
             <li>
                 <a asp-action="Privacy" asp-controller="Home">
                     <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 0 512 512"><!--!Font Awesome Free 6.6.0 by  - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M256 0c4.6 0 9.2 1 13.4 2.9L457.7 82.8c22 9.3 38.4 31 38.3 57.2c-.5 99.2-41.3 280.7-213.6 363.2c-16.7 8-36.1 8-52.8 0C57.3 420.7 16.5 239.2 16 140c-.1-26.2 16.3-47.9 38.3-57.2L242.7 2.9C246.8 1 251.4 0 256 0zm0 66.8l0 378.1C394 378 431.1 230.1 432 141.4L256 66.8s0 0 0 0z" /></svg>

@@ -19,10 +19,10 @@ namespace E_Commerce_.NET_iTi_2024.Controllers
             ICollection<Order> orders = _orderRepo.GetAll();
             return View(orders);
         }
-        public IActionResult GetById(int id)
+        public IActionResult Details(int id)
         {
             Order? order = _orderRepo.GetById(id);
-            return View(order);
+            return View("GetById", order);
         }
         #endregion
 
@@ -47,13 +47,13 @@ namespace E_Commerce_.NET_iTi_2024.Controllers
         public IActionResult Edit(Order order)
         {
             _orderRepo.Update(order);
-            return View("GetAll");
+            return RedirectToAction("GetAll");
         }
         public IActionResult Delete(int id)
         {
             Order? order = _orderRepo.GetById(id);
             _orderRepo.Delete(order);
-            return View("GetAll");
+            return RedirectToAction("GetAll");
         }
         #endregion
     }

@@ -15,36 +15,6 @@
     <center><h2>@Model.FullName</h2></center>
 <hr />
     <dl class="dl-horizontal">
-        
-            @* <b>ID: </b>@Model.Id
-            <br>
-            <b>Full Name: </b>@Model.FullName
-            <br>
-            
-            <b>Country: </b>@Model.Country
-            <br>
-            <b>Default shipping address: </b>@Model.DefaultShippingAddress
-            <br>
-            <b>Billing address: </b>@Model.BillingAddress
-            <br> *@
-        @* <dt>
-            Full Name
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.FullName)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.Email)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.Email)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.Phone)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.Phone)
-        </dd> *@
         <p>
          @Model.Email
         <br>
@@ -68,12 +38,17 @@
         <dd>
             @Model.BillingAddress
         </dd>
-        
     </dl>
 </div>
 </div>
-
+<center>
+    <a asp-action="EditForm" asp-controller="Customer" asp-route-id=@Model.Id>
+        <button class="my-button" role="button" style="display: inline; background: #028875"> <span class="text">Edit</span></button>
+    </a>
+    <a asp-action="Delete" asp-controller="Customer" asp-route-id=@Model.Id>
+        <button class="my-button" role="button" style="display: inline; background: #E53935"> <span class="text">Delete</span></button>
+    </a>
+</center>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
     @Html.ActionLink("Back to List", "GetAll")
 </p>

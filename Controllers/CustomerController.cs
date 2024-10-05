@@ -41,12 +41,12 @@ namespace E_Commerce.Controllers
         public IActionResult Add(Customer customer)
         {
             _customerRepo.Insert(customer);
-            return View("GetAll");
+            return RedirectToAction("GetAll");
         }
         public IActionResult Edit(Customer customer)
         {
             _customerRepo.Update(customer);
-            return View("GetAll");
+            return RedirectToAction("GetAll");
         }
         public IActionResult Delete(int id)
         {
