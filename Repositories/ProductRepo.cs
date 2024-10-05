@@ -28,6 +28,6 @@ namespace E_Commerce.Repositories
             _context.SaveChanges();
         }
 
-        public bool ProductExist(string name) => _context.Products.Any(p => p.Name == name);
+        public bool SkuExist(string sku) => _context.Products.Any(p => p.Sku == sku);
     }
 }

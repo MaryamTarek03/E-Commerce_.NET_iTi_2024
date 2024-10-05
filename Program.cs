@@ -1,7 +1,5 @@
 using E_Commerce.Interfaces;
-using E_Commerce.Models;
 using E_Commerce.Repositories;
-using Microsoft.EntityFrameworkCore;
 
 namespace E_Commerce
 {
