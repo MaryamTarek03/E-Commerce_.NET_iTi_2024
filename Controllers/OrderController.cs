@@ -7,7 +7,13 @@ namespace E_Commerce_.NET_iTi_2024.Controllers
     public class OrderController : Controller
     {
         IOrderRepo _orderRepo;
-        public OrderController(IOrderRepo orderRepo) => _orderRepo = orderRepo;
+        ICustomerRepo _customerRepo;
+        public OrderController(IOrderRepo orderRepo, ICustomerRepo customerRepo)
+        {
+            _orderRepo = orderRepo;
+            _customerRepo = customerRepo;
+        }
+
         public IActionResult Index()
         {
             return View();
@@ -27,7 +33,7 @@ namespace E_Commerce_.NET_iTi_2024.Controllers
         #endregion
 
         #region form views
-        public IActionResult AddForm(Order order)
+        public IActionResult AddForm()
         {
             return View();
         }

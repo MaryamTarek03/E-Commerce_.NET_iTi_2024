@@ -1,0 +1,69 @@
+﻿@using E_Commerce.Models.DbModels
+@{
+    ViewBag.Title = "Customer Details";
+}
+@model Product
+
+
+<head>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<div class="center-body">
+<div class="glowy-card">
+    <center><h2>@Model.Name</h2> <br /> <img src=@Model.Image width="300"></center>
+<hr />
+    <dl class="dl-horizontal">
+        <p>
+         @Model.Sku
+        <br>
+        @Model.Description
+        </p>        
+        <dt>
+            Created at
+        </dt>
+        <dd>
+            @Model.CreationDate
+        </dd>
+        <dt>
+            Stock
+        </dt>
+        <dd>
+            @Model.Stock
+        </dd>
+        <dt>
+            Price
+        </dt>
+        <dd>
+            @Model.Price
+        </dd>
+        <dt>
+            Weight
+        </dt>
+        <dd>
+            @Model.Weight
+        </dd>
+        <dt>
+            Categories
+        </dt>
+        <dd>
+                @foreach (ProductCategory? productCategory in Model.ProductCategories)
+                {
+                    @productCategory.Category?.Name;
+                }
+        </dd>
+    </dl>
+</div>
+</div>
+<center>
+    <a asp-action="EditForm" asp-controller="Product" asp-route-id=@Model.Id>
+        <button class="my-button" role="button" style="display: inline; background: #028875"> <span class="text">Edit</span></button>
+    </a>
+    <a asp-action="Delete" asp-controller="Product" asp-route-id=@Model.Id>
+        <button class="my-button" role="button" style="display: inline; background: #E53935"> <span class="text">Delete</span></button>
+    </a>
+</center>
+<p>
+    @Html.ActionLink("Back to List", "GetAll")
+</p>

@@ -7,7 +7,12 @@ namespace E_Commerce_.NET_iTi_2024.Controllers
     public class ProductController : Controller
     {
         IProductRepo _productRepo;
-        public ProductController(IProductRepo productRepo) => _productRepo = productRepo;
+        ICategoryRepo _categoryRepo;
+        public ProductController(IProductRepo productRepo, ICategoryRepo categoryRepo)
+        {
+            _productRepo = productRepo;
+            _categoryRepo = categoryRepo;
+        }
 
         public IActionResult Index()
         {
@@ -20,16 +25,17 @@ namespace E_Commerce_.NET_iTi_2024.Controllers
             ICollection<Product> products = _productRepo.GetAll().ToList();
             return View(products);
         }
-        public IActionResult GetById(int id)
+        public IActionResult Details(int id)
         {
             Product? product = _productRepo.GetById(id);
-            return View(product);
+            return View("GetById", product);
         }
         #endregion
 
         #region form views
-        public IActionResult AddForm(Product product)
+        public IActionResult AddForm()
         {
+            ViewBag.Categories = _categoryRepo.GetAll();
             return View();
         }
         public IActionResult EditForm(int id)
@@ -48,13 +54,13 @@ namespace E_Commerce_.NET_iTi_2024.Controllers
         public IActionResult Edit(Product product)
         {
             _productRepo.Update(product);
-            return View("GetAll");
+            return RedirectToAction("GetAll");
         }
         public IActionResult Delete(int id)
         {
             Product? Product = _productRepo.GetById(id);
             _productRepo.Delete(Product);
-            return View("GetAll");
+            return RedirectToAction("GetAll");
         }
         #endregion
     }
