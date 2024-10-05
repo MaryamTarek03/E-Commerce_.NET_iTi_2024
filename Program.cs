@@ -18,10 +18,14 @@ namespace E_Commerce
             //    optionsBuilder
             //        .UseLazyLoadingProxies()
             //        // change to your connection string & UseSqlServer
-            //        .UseNpgsql(builder.Configuration.GetConnectionString("Default"));
+            //        .UseNpgsql("Host=localhost;Username=postgres;Password=root;Database=iTiECommerce");
             //});
             builder.Services.AddScoped<ICustomerRepo, CustomerRepo>();
             builder.Services.AddScoped<IProductRepo, ProductRepo>();
+            builder.Services.AddScoped<ICategoryRepo, CategoryRepo>();
+            builder.Services.AddScoped<IOrderRepo, OrderRepo>();
+            builder.Services.AddScoped<IProductCategoryRepo, ProductCategoryRepo>();
+            builder.Services.AddScoped<IOrderDetailRepo, OrderDetailRepo>();
 
             var app = builder.Build();
 
