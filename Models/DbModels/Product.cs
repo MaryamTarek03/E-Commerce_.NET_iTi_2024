@@ -1,10 +1,12 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
+﻿using E_Commerce.Models.Validations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace E_Commerce.Models.DbModels
 {
     public class Product
     {
         public int Id { get; set; }
+        [UniqueProductSku]
         public string Sku { get; set; } = string.Empty;
         public string Name { get; set; } = string.Empty;
         public decimal Price { get; set; }

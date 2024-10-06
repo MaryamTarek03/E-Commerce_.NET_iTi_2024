@@ -40,8 +40,12 @@ namespace E_Commerce.Controllers
         // functions
         public IActionResult Add(Customer customer)
         {
-            _customerRepo.Insert(customer);
-            return RedirectToAction("GetAll");
+            if (ModelState.IsValid)
+            {
+                _customerRepo.Insert(customer);
+                return RedirectToAction("GetAll");
+            }
+            return View("AddForm");
         }
         public IActionResult Edit(Customer customer)
         {

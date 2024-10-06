@@ -43,8 +43,12 @@ namespace E_Commerce.Controllers
         #region functions
         public IActionResult Add(Category category)
         {
-            _categoryRepo.Insert(category);
-            return RedirectToAction("GetAll");
+            if (ModelState.IsValid)
+            {
+                _categoryRepo.Insert(category);
+                return RedirectToAction("GetAll");
+            }
+            return View("AddForm");
         }
         public IActionResult Edit(Category category)
         {

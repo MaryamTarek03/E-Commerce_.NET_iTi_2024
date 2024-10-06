@@ -48,8 +48,12 @@ namespace E_Commerce_.NET_iTi_2024.Controllers
         #region functions
         public IActionResult Add(Product product)
         {
-            _productRepo.Insert(product);
-            return RedirectToAction("GetAll");
+            if (ModelState.IsValid)
+            {
+                _productRepo.Insert(product);
+                return RedirectToAction("GetAll");
+            }
+            return View("AddForm");
         }
         public IActionResult Edit(Product product)
         {
