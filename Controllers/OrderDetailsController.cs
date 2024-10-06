@@ -55,5 +55,11 @@ namespace E_Commerce.Controllers
             _orderDetailRepo.Delete(orderDetail);
             return RedirectToAction("Details", "Order", new { id = orderDetail.OrderId });
         }
+
+        public IActionResult ValidQuantity(int quantity)
+        {
+            if (quantity > 0 && quantity < 100) return Json(true);
+            return Json(false);
+        }
     }
 }
