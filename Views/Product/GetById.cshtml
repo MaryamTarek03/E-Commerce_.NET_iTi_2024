@@ -67,3 +67,33 @@
 <p>
     @Html.ActionLink("Back to List", "GetAll")
 </p>
+
+<br />
+<center><h2>Categories</h2></center>
+<a asp-action="AddForm" asp-controller="ProductCategory" asp-route-id=@Model.Id>
+    <button class="my-button" role="button" style="margin-left: auto;"> <span class="text">Add category</span></button>
+</a>
+<br />
+<div class="my-grid-container">
+    @foreach (ProductCategory productCategory in Model.ProductCategories)
+    {
+        <div class="my-card">
+                <center><h2>@productCategory.Category?.Name</h2> <br /><img src=@productCategory.Category?.Thumbnail width="150" /></center>
+                <hr />
+                <dl class="dl-horizontal">
+
+                    <dt>Description</dt>
+                    <dd>@productCategory.Category?.Description</dd>
+                </dl>
+
+            <center>
+                <a asp-action="EditForm" asp-controller="ProductCategory" asp-route-id=@productCategory.Id>
+                    <button class="my-button" role="button" style="display: inline; background: #028875"> <span class="text">Edit</span></button>
+                </a>
+                <a asp-action="Delete" asp-controller="ProductCategory" asp-route-id=@productCategory.Id>
+                    <button class="my-button" role="button" style="display: inline; background: #E53935"> <span class="text">Delete</span></button>
+                </a>
+            </center>
+        </div>
+    }
+</div>

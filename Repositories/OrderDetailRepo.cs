@@ -10,8 +10,9 @@ namespace E_Commerce.Repositories
         public OrderDetailRepo() => _context = new ShopContext();
 
         public ICollection<OrderDetail> GetAll() => _context.OrderDetails.ToList();
-        public OrderDetail? GetById(int orderId, int productId)
+        public OrderDetail? GetByIds(int orderId, int productId)
             => _context.OrderDetails.SingleOrDefault(od => od.OrderId == orderId && od.ProductId == productId);
+        public OrderDetail? GetById(int id) => _context.OrderDetails.SingleOrDefault(od => od.Id == id);
 
         public void Insert(OrderDetail orderDetail)
         {

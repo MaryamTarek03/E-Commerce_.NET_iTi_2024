@@ -56,6 +56,10 @@
 </p>
 <br />
 <center><h2>Order items</h2></center>
+<a asp-action="AddForm" asp-controller="OrderDetails" asp-route-id=@Model.Id>
+    <button class="my-button" role="button" style="margin-left: auto;"> <span class="text">Order new</span></button>
+</a>
+<br />
 <div class="my-grid-container">
     @foreach (OrderDetail orderDetail in Model.OrderDetails)
     {
@@ -78,6 +82,15 @@
             <dd>
                 @orderDetail.Price | @orderDetail.Quantity
             </dd>
+
+            <center>
+                <a asp-action="EditForm" asp-controller="OrderDetails" asp-route-id=@orderDetail.Id>
+                    <button class="my-button" role="button" style="display: inline; background: #028875"> <span class="text">Edit</span></button>
+                </a>
+                <a asp-action="Delete" asp-controller="OrderDetails" asp-route-id=@orderDetail.Id>
+                    <button class="my-button" role="button" style="display: inline; background: #E53935"> <span class="text">Delete</span></button>
+                </a>
+            </center>
         </div>
     }
 </div>

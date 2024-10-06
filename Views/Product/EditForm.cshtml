@@ -1,0 +1,82 @@
+﻿@using E_Commerce.Models.DbModels
+
+@{
+    ViewBag.Title = "Edit Product";
+}
+<head>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<h2>Edit Product</h2>
+@model Product
+<div class="center-body">
+    <form asp-action="Edit" method="post" class="my-card" style="min-width:500px">
+        <input type="hidden" asp-for="Id" />
+
+        <div class="form-group">
+            <label asp-for="Sku">SKU</label>
+            <input asp-for="Sku" class="form-control" placeholder="Enter product SKU" />
+            <span asp-validation-for="Sku" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Name">Name</label>
+            <input asp-for="Name" class="form-control" placeholder="Enter product name" />
+            <span asp-validation-for="Name" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Price">Price</label>
+            <input asp-for="Price" class="form-control" placeholder="Enter product price" />
+            <span asp-validation-for="Price" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Weight">Weight</label>
+            <input asp-for="Weight" class="form-control" placeholder="Enter product weight" />
+            <span asp-validation-for="Weight" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Description">Description</label>
+            <textarea asp-for="Description" class="form-control" placeholder="Enter product description"></textarea>
+            <span asp-validation-for="Description" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Thumbnail">Thumbnail</label>
+            <input asp-for="Thumbnail" class="form-control" placeholder="Enter product thumbnail URL" />
+            <span asp-validation-for="Thumbnail" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Image">Image</label>
+            <input asp-for="Image" class="form-control" placeholder="Enter product image URL" />
+            <span asp-validation-for="Image" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="CreationDate">Creation Date</label>
+            <input asp-for="CreationDate" class="form-control" placeholder="Enter creation date" />
+            <span asp-validation-for="CreationDate" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Stock">Stock</label>
+            <input asp-for="Stock" class="form-control" placeholder="Enter stock quantity" />
+            <span asp-validation-for="Stock" class="text-danger"></span>
+        </div>
+
+        <br />
+        <center>
+            <button type="submit" class="my-button">Update Product</button>
+        </center>
+    </form>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

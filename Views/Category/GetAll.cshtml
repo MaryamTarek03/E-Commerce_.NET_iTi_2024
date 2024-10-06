@@ -1,0 +1,44 @@
+﻿@using E_Commerce.Models.DbModels
+@{
+    ViewBag.Title = "Categories";
+}
+
+@model ICollection<Category>
+
+<a asp-action="AddForm" asp-controller="Category">
+    <button class="my-button" role="button" style="margin-left: auto;">
+        <span class="text">Create new</span>
+    </button>
+</a>
+
+<div class="center-body">
+
+    <table class="rwd-table">
+        <thead>
+            <tr>
+                <th>Image</th>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (Category category in Model)
+            {
+                <tr>
+                    <td><img src=@category.Thumbnail width="45" /></td>
+                    <td>
+                        <a asp-action="Details" asp-controller="Category" asp-route-id=@category.Id>
+                            @category.Name
+                        </a>
+                    </td>
+                    <td>@category.Description</td>
+                    <td>
+                        @Html.ActionLink("Edit", "EditForm", new { id = category.Id }) |
+                        @Html.ActionLink("Delete", "Delete", new { id = category.Id })
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

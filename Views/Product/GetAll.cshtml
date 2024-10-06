@@ -34,7 +34,9 @@
                 <td>
                     @foreach (ProductCategory? productCategory in product.ProductCategories)
                     {
-                            @productCategory.Category?.Name;
+                        <a asp-action="Details" asp-controller="Category" asp-route-id=@productCategory.CategoryId>
+                            @productCategory.Category?.Name,
+                        </a>
                     }
                 </td>
                 <td>

@@ -14,40 +14,40 @@
     <form asp-action="Add" method="post" class="my-card" style="min-width:500px">
         <div class="form-group">
             <label asp-for="Amount">Amount</label>
-            <input asp-for="Amount" class="form-control" />
+            <input asp-for="Amount" class="form-control" placeholder="Enter the order amount" />
             <span asp-validation-for="Amount" class="text-danger"></span>
         </div>
 
         <div class="form-group">
-            <label asp-for="ShippingAddress"></label>
-            <input type="text" asp-for="ShippingAddress" class="form-control" />
+            <label asp-for="ShippingAddress">Shipping Address</label>
+            <input type="text" asp-for="ShippingAddress" class="form-control" placeholder="Enter the shipping address" />
             <span asp-validation-for="ShippingAddress" class="text-danger"></span>
         </div>
 
         <div class="form-group">
-
-            <label asp-for="OrderAddress"></label>
-            <input asp-for="OrderAddress" class="form-control" />
+            <label asp-for="OrderAddress">Order Address</label>
+            <input asp-for="OrderAddress" class="form-control" placeholder="Enter the order address" />
             <span asp-validation-for="OrderAddress" class="text-danger"></span>
         </div>
 
         <div class="form-group">
-            <label asp-for="OrderEmail"></label>
-            <input type="email" asp-for="OrderEmail" class="form-control" />
+            <label asp-for="OrderEmail">Order Email</label>
+            <input type="email" asp-for="OrderEmail" class="form-control" placeholder="Enter the order email" />
             <span asp-validation-for="OrderEmail" class="text-danger"></span>
         </div>
 
         <div class="form-group">
             <label asp-for="OrderDate">Order Date</label>
-            <input asp-for="OrderDate" class="form-control" />
+            <input asp-for="OrderDate" class="form-control" placeholder="Enter the order date" />
             <span asp-validation-for="OrderDate" class="text-danger"></span>
         </div>
 
         <div class="form-group">
             <label asp-for="OrderStatus">Order Status</label>
-            <input asp-for="OrderStatus" class="form-control" />
+            <input asp-for="OrderStatus" class="form-control" placeholder="Enter the order status" />
             <span asp-validation-for="OrderStatus" class="text-danger"></span>
         </div>
+
         <div class="form-group col-md-6">
             <label for="inputState">Customer Name</label>
             <select asp-for="CustomerId" class="form-control">

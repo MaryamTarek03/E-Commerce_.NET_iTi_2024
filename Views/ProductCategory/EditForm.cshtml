@@ -1,0 +1,41 @@
+﻿@using E_Commerce.Models.DbModels
+@{
+    ViewBag.Title = "Confirm Order";
+}
+<head>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<h2>Edit Category</h2>
+@model ProductCategory
+<div class="center-body">
+    <form asp-action="Edit" method="post" class="my-card" style="min-width:500px">
+
+        <input asp-for="Id" hidden />
+        <input asp-for="ProductId" hidden />
+        <center>
+            <div class="form-group col-md-8">
+                <label for="inputState">Category name</label>
+                <select asp-for="CategoryId" class="form-control">
+                    @foreach (Category item in ViewBag.Categories)
+                    {
+                        <option value="@item.Id">@item.Name</option>
+                    }
+                </select>
+            </div>
+
+        </center>
+
+        <br />
+        <center>
+            <button type="submit" class="my-button">Update</button>
+        </center>
+    </form>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

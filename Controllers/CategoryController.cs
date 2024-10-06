@@ -21,10 +21,10 @@ namespace E_Commerce.Controllers
             ICollection<Category> categories = _categoryRepo.GetAll();
             return View(categories);
         }
-        public IActionResult GetById(int id)
+        public IActionResult Details(int id)
         {
             Category? category = _categoryRepo.GetById(id);
-            return View(category);
+            return View("GetById", category);
         }
         #endregion
 

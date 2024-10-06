@@ -9,44 +9,44 @@
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="/css/style.css">
 </head>
-<h2>Edit Customer</h2>
+<h2>Edit Order</h2>
 <div class="center-body">
     <form asp-action="Edit" method="post" class="my-card" style="min-width: 500px">
         <input type="hidden" asp-for="Id" />
 
         <div class="form-group">
             <label asp-for="Amount">Amount</label>
-            <input asp-for="Amount" class="form-control" />
+            <input asp-for="Amount" class="form-control" placeholder="Enter the order amount" />
             <span asp-validation-for="Amount" class="text-danger"></span>
         </div>
 
         <div class="form-group">
-            <label asp-for="ShippingAddress"></label>
-            <input asp-for="ShippingAddress" class="form-control" />
+            <label asp-for="ShippingAddress">Shipping Address</label>
+            <input asp-for="ShippingAddress" class="form-control" placeholder="Enter the shipping address" />
             <span asp-validation-for="ShippingAddress" class="text-danger"></span>
         </div>
 
         <div class="form-group">
-            <label asp-for="OrderAddress"></label>
-            <input asp-for="OrderAddress" class="form-control" />
+            <label asp-for="OrderAddress">Order Address</label>
+            <input asp-for="OrderAddress" class="form-control" placeholder="Enter the order address" />
             <span asp-validation-for="OrderAddress" class="text-danger"></span>
         </div>
 
         <div class="form-group">
-            <label asp-for="OrderEmail"></label>
-            <input type="email" asp-for="OrderEmail" class="form-control" />
+            <label asp-for="OrderEmail">Order Email</label>
+            <input type="email" asp-for="OrderEmail" class="form-control" placeholder="Enter the order email" />
             <span asp-validation-for="OrderEmail" class="text-danger"></span>
         </div>
 
         <div class="form-group">
-            <label asp-for="OrderDate">Billing address</label>
-            <input asp-for="OrderDate" class="form-control" />
+            <label asp-for="OrderDate">Order Date</label>
+            <input asp-for="OrderDate" class="form-control" placeholder="Enter the order date" />
             <span asp-validation-for="OrderDate" class="text-danger"></span>
         </div>
 
         <div class="form-group">
-            <label asp-for="OrderStatus">Default shipping address</label>
-            <input asp-for="OrderStatus" class="form-control" />
+            <label asp-for="OrderStatus">Order Status</label>
+            <input asp-for="OrderStatus" class="form-control" placeholder="Enter the order status" />
             <span asp-validation-for="OrderStatus" class="text-danger"></span>
         </div>
 
