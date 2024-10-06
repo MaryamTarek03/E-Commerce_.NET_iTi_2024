@@ -8,7 +8,7 @@ namespace E_Commerce.Repositories
     {
         // بعرف الداتا بيز هنا عشان استعملها
         readonly ShopContext _context;
-        public CustomerRepo() => _context = new ShopContext();
+        public CustomerRepo(ShopContext context) => _context = context;
 
         // بجيب كل حاجة جوا الداتا بيز
         // ToList => gets all elements

@@ -7,7 +7,7 @@ namespace E_Commerce.Repositories
     public class OrderDetailRepo : IOrderDetailRepo
     {
         readonly ShopContext _context;
-        public OrderDetailRepo() => _context = new ShopContext();
+        public OrderDetailRepo(ShopContext context) => _context = context;
 
         public ICollection<OrderDetail> GetAll() => _context.OrderDetails.ToList();
         public OrderDetail? GetByIds(int orderId, int productId)

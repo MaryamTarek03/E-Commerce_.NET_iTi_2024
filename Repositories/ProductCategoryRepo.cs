@@ -7,7 +7,7 @@ namespace E_Commerce.Repositories
     public class ProductCategoryRepo : IProductCategoryRepo
     {
         readonly ShopContext _context;
-        public ProductCategoryRepo() => _context = new ShopContext();
+        public ProductCategoryRepo(ShopContext context) => _context = context;
 
 
         public ICollection<ProductCategory> GetAll() => [.. _context.ProductCategories];

@@ -1,5 +1,7 @@
 using E_Commerce.Interfaces;
+using E_Commerce.Models;
 using E_Commerce.Repositories;
+using Microsoft.EntityFrameworkCore;
 
 namespace E_Commerce
 {
@@ -11,13 +13,13 @@ namespace E_Commerce
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
-            //builder.Services.AddDbContext<ShopContext>(optionsBuilder =>
-            //{
-            //    optionsBuilder
-            //        .UseLazyLoadingProxies()
-            //        // change to your connection string & UseSqlServer
-            //        .UseNpgsql("Host=localhost;Username=postgres;Password=root;Database=iTiECommerce");
-            //});
+            builder.Services.AddDbContext<ShopContext>(optionsBuilder =>
+            {
+                optionsBuilder
+                    .UseLazyLoadingProxies()
+                    // change to your connection string & UseSqlServer
+                    .UseNpgsql("Host=localhost;Username=postgres;Password=root;Database=iTiECommerce");
+            });
             builder.Services.AddScoped<ICustomerRepo, CustomerRepo>();
             builder.Services.AddScoped<IProductRepo, ProductRepo>();
             builder.Services.AddScoped<ICategoryRepo, CategoryRepo>();

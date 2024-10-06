@@ -7,7 +7,7 @@ namespace E_Commerce.Repositories
     public class OrderRepo : IOrderRepo
     {
         readonly ShopContext _context;
-        public OrderRepo() => _context = new ShopContext();
+        public OrderRepo(ShopContext context) => _context = context;
 
         public ICollection<Order> GetAll() => _context.Orders.ToList();
 

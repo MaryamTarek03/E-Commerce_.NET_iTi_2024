@@ -7,7 +7,7 @@ namespace E_Commerce.Repositories
     public class CategoryRepo : ICategoryRepo
     {
         readonly ShopContext _context;
-        public CategoryRepo() => _context = new ShopContext();
+        public CategoryRepo(ShopContext context) => _context = context;
 
         public ICollection<Category> GetAll() => _context.Categories.ToList();
         public Category? GetById(int id) => _context.Categories.SingleOrDefault(c => c.Id == id);

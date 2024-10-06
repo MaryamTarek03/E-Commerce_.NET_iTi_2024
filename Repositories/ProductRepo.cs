@@ -7,7 +7,7 @@ namespace E_Commerce.Repositories
     public class ProductRepo : IProductRepo
     {
         readonly ShopContext _context;
-        public ProductRepo() => _context = new ShopContext();
+        public ProductRepo(ShopContext context) => _context = context;
 
         public ICollection<Product> GetAll() => _context.Products.ToList();
         public Product? GetById(int id) => _context.Products.SingleOrDefault(p => p.Id == id);
