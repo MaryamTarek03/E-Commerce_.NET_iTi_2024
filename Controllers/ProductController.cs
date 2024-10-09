@@ -50,6 +50,7 @@ namespace E_Commerce_.NET_iTi_2024.Controllers
         {
             if (ModelState.IsValid)
             {
+                product.CreationDate = product.CreationDate.ToUniversalTime();
                 _productRepo.Insert(product);
                 return RedirectToAction("GetAll");
             }
@@ -57,6 +58,7 @@ namespace E_Commerce_.NET_iTi_2024.Controllers
         }
         public IActionResult Edit(Product product)
         {
+            product.CreationDate = product.CreationDate.ToUniversalTime();
             _productRepo.Update(product);
             return RedirectToAction("GetAll");
         }
